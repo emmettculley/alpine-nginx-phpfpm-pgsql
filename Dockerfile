@@ -20,6 +20,7 @@ RUN apk --update add \
   py-pip \
   php-curl \
   php-zip \
+  php-dom \
   supervisor
 
 # Configure supervisor
