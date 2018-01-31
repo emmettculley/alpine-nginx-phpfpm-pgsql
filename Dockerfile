@@ -3,24 +3,24 @@ MAINTAINER Daniel McCoy <danielmccoy@gmail.com>
 
 RUN apk --update --no-cache add \
   nginx \
-  php5-fpm \
-  php5-pdo \
-  php5-json \
-  php5-openssl \
-  php5-pgsql \
-  php5-pdo_pgsql \
-  php5-mcrypt \
-  php5-sqlite3 \
-  php5-pdo_sqlite \
-  php5-ctype \
-  php5-zlib \
-  php5-xml \
-  php5-gd \
+  php7-fpm \
+  php7-pdo \
+  php7-json \
+  php7-openssl \
+  php7-pgsql \
+  php7-pdo_pgsql \
+  php7-mcrypt \
+  php7-sqlite3 \
+  php7-pdo_sqlite \
+  php7-ctype \
+  php7-zlib \
+  php7-xml \
+  php7-gd \
   curl \
   py-pip \
-  php5-curl \
-  php5-zip \
-  php5-dom \
+  php7-curl \
+  php7-zip \
+  php7-dom \
   supervisor
 
 ADD     build_pdftk.sh /bin/
@@ -38,14 +38,14 @@ RUN pip install --upgrade pip && \
 
 RUN mkdir -p /etc/nginx
 RUN mkdir -p /run/nginx
-RUN mkdir -p /var/run/php5-fpm
+RUN mkdir -p /var/run/php7-fpm
 RUN mkdir -p /var/log/supervisor
 
 RUN rm /etc/nginx/nginx.conf
 ADD nginx.conf /etc/nginx/nginx.conf
 
-RUN rm /etc/php5/php-fpm.conf
-ADD php-fpm.conf /etc/php5/php-fpm.conf
+RUN rm /etc/php7/php-fpm.conf
+ADD php-fpm.conf /etc/php7/php-fpm.conf
 
 VOLUME ["/var/www", "/etc/nginx/sites-enabled"]
 
