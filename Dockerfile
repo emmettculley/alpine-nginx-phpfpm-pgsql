@@ -21,6 +21,9 @@ RUN apk --update --no-cache add \
   php7-curl \
   php7-zip \
   php7-dom \
+  php7-simplexml \
+  php7-tokenizer \
+  php7-xmlwriter \
   supervisor
 
 ADD     build_pdftk.sh /bin/
