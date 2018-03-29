@@ -1,5 +1,5 @@
 FROM alpine:latest
-MAINTAINER Daniel McCoy <danielmccoy@gmail.com>
+MAINTAINER Eric Ball <eball@ccctechcenter.org>
 
 RUN apk --update --no-cache add \
   nginx \
