@@ -49,6 +49,9 @@ ADD nginx.conf /etc/nginx/nginx.conf
 RUN rm /etc/php5/php-fpm.conf
 ADD php-fpm.conf /etc/php5/php-fpm.conf
 
+RUN rm -f /etc/php5/php.ini
+ADD php.ini /etc/php5/php.ini
+
 VOLUME ["/var/www", "/etc/nginx/sites-enabled"]
 
 ADD nginx-supervisor.ini /etc/supervisor.d/nginx-supervisor.ini
