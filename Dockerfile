@@ -23,6 +23,8 @@ RUN apk --update --no-cache add \
   php5-dom \
   supervisor
 
+RUN ln -s `which php5` /usr/bin/php
+
 ADD     build_pdftk.sh /bin/
 ENV     VER_PDFTK=2.02
 
