@@ -1,8 +1,9 @@
 FROM alpine:latest
-MAINTAINER Daniel McCoy <danielmccoy@gmail.com>
+MAINTAINER Eric Ball <eball@ccctechcenter.org>
 
 RUN apk --update --no-cache add \
   nginx \
+  php7 \
   php7-fpm \
   php7-pdo \
   php7-json \
@@ -45,11 +46,14 @@ RUN mkdir -p /run/nginx
 RUN mkdir -p /var/run/php7-fpm
 RUN mkdir -p /var/log/supervisor
 
-RUN rm /etc/nginx/nginx.conf
+RUN rm -f /etc/nginx/nginx.conf
 ADD nginx.conf /etc/nginx/nginx.conf
 
-RUN rm /etc/php7/php-fpm.conf
+RUN rm -f /etc/php7/php-fpm.conf
 ADD php-fpm.conf /etc/php7/php-fpm.conf
+
+RUN rm -f /etc/php7/php.ini
+ADD php.ini /etc/php7/php.ini
 
 VOLUME ["/var/www", "/etc/nginx/sites-enabled"]
 
