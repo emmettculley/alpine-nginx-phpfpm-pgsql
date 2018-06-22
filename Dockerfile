@@ -10,7 +10,6 @@ RUN apk --update --no-cache add \
   php7-openssl \
   php7-pgsql \
   php7-pdo_pgsql \
-  php7-mcrypt \
   php7-sqlite3 \
   php7-pdo_sqlite \
   php7-ctype \
@@ -26,6 +25,7 @@ RUN apk --update --no-cache add \
   php7-tokenizer \
   php7-xmlwriter \
   php7-session \
+  php7-fileinfo \
   supervisor
 
 ADD     build_pdftk.sh /bin/
@@ -41,10 +41,7 @@ RUN apk --no-cache add --update unzip wget make fastjar gcc gcc-java g++ && \
 RUN pip install --upgrade pip && \
     pip install supervisor-stdout
 
-RUN mkdir -p /etc/nginx
-RUN mkdir -p /run/nginx
-RUN mkdir -p /var/run/php7-fpm
-RUN mkdir -p /var/log/supervisor
+RUN mkdir -p {/etc/nginx,/run/nginx,/var/run/php7-fpm,/var/log/supervisor}
 
 RUN rm -f /etc/nginx/nginx.conf
 ADD nginx.conf /etc/nginx/nginx.conf
