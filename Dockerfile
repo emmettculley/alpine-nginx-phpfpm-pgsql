@@ -21,6 +21,7 @@ RUN apk --update --no-cache add \
   php5-curl \
   php5-zip \
   php5-dom \
+  php5-iconv \
   supervisor
 
 RUN ln -s `which php5` /usr/bin/php
