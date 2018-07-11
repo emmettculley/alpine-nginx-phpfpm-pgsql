@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.7
 MAINTAINER Eric Ball <eball@ccctechcenter.org>
 
 RUN apk --update --no-cache add \
