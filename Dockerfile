@@ -1,6 +1,11 @@
 FROM alpine:latest
 MAINTAINER Eric Ball <eball@ccctechcenter.org>
 
+RUN rm -rf /var/cache/apk/* && \
+    rm -rf /tmp/*
+
+RUN apk update
+
 RUN apk --update --no-cache add \
   nginx \
   php7 \
