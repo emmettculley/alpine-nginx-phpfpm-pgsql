@@ -1,8 +1,9 @@
-FROM alpine:latest
+FROM alpine:3.8
 MAINTAINER Eric Ball <eball@ccctechcenter.org>
 
 RUN rm -rf /var/cache/apk/* && \
-    rm -rf /tmp/*
+    rm -rf /tmp/* && \
+    mkdir /run/nginx
 
 RUN apk update
 
