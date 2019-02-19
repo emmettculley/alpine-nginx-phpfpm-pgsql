@@ -18,6 +18,7 @@ RUN apk --update --no-cache add \
   php7-gd \
   php7-iconv \
   php7-json \
+  php7-mbstring \
   php7-openssl \
   php7-pdo \
   php7-pdo_mysql \
@@ -35,6 +36,8 @@ RUN apk --update --no-cache add \
   curl \
   py-pip \
   supervisor
+
+RUN apk add --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing gnu-libiconv
 
 ADD     build_pdftk.sh /bin/
 ENV     VER_PDFTK=2.02
