@@ -37,7 +37,7 @@ RUN apk --update --no-cache add \
   py-pip \
   supervisor
 
-RUN apk add --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing gnu-libiconv
+RUN apk add --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/community gnu-libiconv
 
 ADD     build_pdftk.sh /bin/
 ENV     VER_PDFTK=2.02
